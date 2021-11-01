@@ -1,4 +1,6 @@
 # instazero 0.0.0
+![alt text](https://github.com/laols574/instazero/images/instazerologo.png?raw=true)
+
 ------------
 
 Author: Lauren Olson [laols574](mailto:laols574@email.arizona.edu)  
