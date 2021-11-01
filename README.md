@@ -1,5 +1,5 @@
 # instazero 0.0.0
-- `![](https://github.com/laols574/instazero/blob/master/images/instazerologo.PNG?raw=true | width=100)
+![test image size]<img src="https://github.com/laols574/instazero/blob/master/images/instazerologo.PNG?raw=true" width="400" height="790">
 
 ------------
 
