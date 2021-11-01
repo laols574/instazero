@@ -1,5 +1,5 @@
 # instazero 0.0.0
-![alt text](https://github.com/laols574/instazero/blob/master/images/instazerologo.PNG?raw=true)
+![alt text](https://github.com/laols574/instazero/blob/master/images/instazerologo.PNG?raw=true =250x250)
 
 ------------
 
