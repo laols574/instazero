@@ -1,14 +1,18 @@
+
+setInterval(function(){removeQuant();}, 10);
+
 // Wait for document ready before executing main function
 var readyStateCheckInterval = setInterval(function() {
     if (document.readyState === "complete") {
         clearInterval(readyStateCheckInterval);
         main();
     }
+
 }, 10);
 
 function main() {
     //remove all likes, views, and follow numbers
-    removeQuantNodes(document.body);
+    removeQuant();
 
     var nodeList = [];
     nodeList = Array.prototype.concat.apply(nodeList, document.getElementsByClassName("Nm9Fw"));
@@ -35,26 +39,49 @@ function main() {
 }
 
 function removeQuantNodes(node){
+  // Create a tree walker to traverse all text nodes
   var walker = document.createTreeWalker(
-    document.body,
-    NodeFilter.SHOW_ELEMENT,
-    { acceptNode: function(node) { return NodeFilter.FILTER_ACCEPT; } },
-    false
+      node,
+      NodeFilter.SHOW_ALL,
+      {
+          acceptNode: function(node) {
+              // Reject contentEditable nodes
+              return (node.parentElement && node.parentElement.isContentEditable) ?
+                  NodeFilter.FILTER_SKIP :
+                  NodeFilter.FILTER_ACCEPT;
+          }
+      },
+      false
   );
 
   var checkNode;
   while(checkNode = walker.nextNode()) {
       if(checkNode.className == "Nm9Fw" || checkNode.className == "vcOH2" || checkNode.className == "-nal3 "){
-        checkNode.nodeValue = "";
+        console.log(checkNode.getNamedItem())
       }
   }
 
 }
 
-
 function removeQuant(){
+  var likes = document.getElementsByClassName("Nm9Fw");
+  while(likes[0]) {
+      likes[0].parentNode.removeChild(likes[0]);
+  }
+  var views = document.getElementsByClassName("vcOH2");
+
+  while(views[0]) {
+      views[0].parentNode.removeChild(views[0]);
+  }
+  var follows = document.getElementsByClassName("-nal3 ");
+
+  while(follows[0]) {
+      follows[0].parentNode.removeChild(follows[0]);
+  }
+}
+
+function removeQuant2(){
   var likes = document.querySelectorAll(".Nm9Fw");
-  console.log(likes.length)
 
   Array.prototype.forEach.call(likes, function (el) {
       el.nodeValue = ""
@@ -67,7 +94,7 @@ function removeQuant(){
       el.nodeValue = ""
   })
 
-  var follow = document.querySelectorAll(".nal3");
+  var follow = document.querySelectorAll(".nal3 ");
   console.log(follow.length)
 
   Array.prototype.forEach.call(follow, function (el) {
