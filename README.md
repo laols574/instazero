@@ -1,4 +1,6 @@
 # instazero 0.0.0
+<img src="https://github.com/laols574/instazero/blob/master/images/instazerologo.PNG?raw=true" width="250" height="250">
+
 ------------
 
 Author: Lauren Olson [laols574](mailto:laols574@email.arizona.edu)  
