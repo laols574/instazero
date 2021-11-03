@@ -14,40 +14,11 @@ body in fragments, through scrolling
 * acts as the main function
 */
 var numbers = /^[0-9]+$/;
-var instagram = false;
-var youtube = false;
-var twitter = false;
 
-chrome.storage.sync.set({
-  instagram: instagram,
-  youtube: youtube,
-  twitter: twitter
-}, function() {console.log('Values are initialized')});
-
-
-chrome.storage.onChanged.addListener(main);
-
-function main(){
-  setInterval(function(){
-    chrome.storage.sync.get(['instagram'], function(result) {
-      instagram =  result.instagram;
-    });
-
-    chrome.storage.sync.get(['youtube'], function(result) {
-      youtube =  result.youtube;
-    });
-
-    chrome.storage.sync.get(['twitter'], function(result) {
-      twitter =  result.twitter;
-    });
-
-    const [likesClass, viewsClass, followsClass] = getQuantElements(instagram, youtube, twitter);
-    removeQuant(likesClass, viewsClass, followsClass);
-  }, 10);
-
-}
-
-
+setInterval(function(){
+  const [likesClass, viewsClass, followsClass] = getQuantElements();
+  removeQuant(likesClass, viewsClass, followsClass);
+}, 10);
 
 
 /*
@@ -59,12 +30,12 @@ output:
   - viewsClass (HTMLCollection) all the nodes which are view values
   - followsClass (HTMLCollection) all the nodes which are follow values
 */
-function getQuantElements(instagram, youtube, twitter){
+function getQuantElements(){
   likesClass = null;
   viewsClass = null;
   followsClass = null;
   //INSTAGRAM
-  if(window.location.hostname === "www.instagram.com" && instagram){
+  if(window.location.hostname === "www.instagram.com"){
     likesClass = document.getElementsByClassName("Nm9Fw");
     viewsClass = document.getElementsByClassName("vcOH2");
     followsClass = document.getElementsByClassName("-nal3");
@@ -76,7 +47,7 @@ function getQuantElements(instagram, youtube, twitter){
     }
   }
   //YOUTUBE
-  else if (window.location.hostname === "www.youtube.com" && youtube) {
+  else if (window.location.hostname === "www.youtube.com") {
     //VIEWS
     var docFragment = document.createDocumentFragment();
 
@@ -157,7 +128,7 @@ function getQuantElements(instagram, youtube, twitter){
 
   }
   //TWITTER
-  else if(window.location.hostname === "twitter.com" && twitter){
+  else if(window.location.hostname === "twitter.com"){
     var docFragment = document.createDocumentFragment();
 
     var group = document.getElementsByClassName("css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0");
