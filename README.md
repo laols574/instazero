@@ -1,5 +1,5 @@
-# instazero 0.0.0
-<img src="https://github.com/laols574/instazero/blob/master/images/instazerologo.PNG?raw=true" width="250" height="250">
+# qualify 1.0.0
+<img src="https://github.com/laols574/instazero/blob/master/images/qualifylogo.PNG?raw=true" width="250" height="250">
 
 ------------
 
