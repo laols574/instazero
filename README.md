@@ -10,6 +10,12 @@ Date: 11/1/2021
 ## Notes
 This Chrome Extension removes all the likes, views and follower counts from Instagram. 
 
+## How to Download
+1. Download the extension as a .zip by clicking the green "Code" button on the right-hand side of the project page on GitHub, then clicking "Download ZIP". 
+2. Extract/Unzip the file.
+3. In Chrome, go to Menu (the three lines)->More tools->Extensions. 
+4. Click the “Developer mode” checkbox and then click the button labeled “Load unpacked extension…”.
+5. Select the unzipped file.
 
 ## Included files
 
