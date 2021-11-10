@@ -6,7 +6,6 @@ the users' visited websites, with the intention of removing quantification
 from social media sites.
 */
 
-
 /*
 setInterval is necessary in order to remove ALL instances
 of the classes as Instagram generates the document's
